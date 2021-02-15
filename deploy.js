@@ -36,7 +36,7 @@ const main = async () => {
     data: hexCode
   }
   var tx = new Tx.Transaction(rawTx);
-  tx.sign(account.privateKey);
+  tx.sign(new Buffer.from(account.privateKey, 'hex'));
   var serializedTx = tx.serialize();
   // console.log('serializedTx', serializedTx.toString('hex'))
   const sendTxResult = await web3.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).catch(err => {
