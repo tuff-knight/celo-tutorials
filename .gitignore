@@ -1,0 +1,4 @@
+.env
+envs
+node_modules
+yarn.lock
