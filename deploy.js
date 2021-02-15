@@ -34,6 +34,8 @@ const main = async () => {
     value: 0,
     data: hexCode
   }
+
+  console.log("rawTx", rawTx)
   var tx = new Tx.Transaction(rawTx);
 
   tx.sign(new Buffer.from(account.privateKey.substr(2), 'hex'));
