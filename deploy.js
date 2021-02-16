@@ -11,7 +11,7 @@ const main = async () => {
 
   // Initialize account from our private key
   const account = web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_KEY);
-
+  console.log("client.connection.web3.currentProvider", client.connection.web3.currentProvider)
   // We need to add private key to ContractKit in order to sign transactions
   client.addAccount(account.privateKey);
   const contract = new web3.eth.Contract(MetaCoin)
